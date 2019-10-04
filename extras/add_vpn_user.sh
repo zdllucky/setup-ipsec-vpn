@@ -41,6 +41,7 @@ fi
 
 VPN_USER=$1
 VPN_PASSWORD=$2
+RESPONSE=$3
 
 if [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
 cat 1>&2 <<EOF
@@ -85,8 +86,7 @@ Write these down. You'll need them to connect!
 EOF
 
 printf "Do you wish to continue? [y/N] "
-read -r response
-case $response in
+case $RESPONSE in
   [yY][eE][sS]|[yY])
     echo
     echo "Adding or updating VPN user..."
