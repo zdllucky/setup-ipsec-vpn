@@ -40,6 +40,7 @@ EOF
 fi
 
 VPN_USER=$1
+RESPONSE=$2
 
 if [ -z "$VPN_USER" ]; then
 cat 1>&2 <<EOF
@@ -98,8 +99,7 @@ Username: $VPN_USER
 EOF
 
 printf "Do you wish to continue? [y/N] "
-read -r response
-case $response in
+case $RESPONSE in
   [yY][eE][sS]|[yY])
     echo
     echo "Deleting VPN user..."
